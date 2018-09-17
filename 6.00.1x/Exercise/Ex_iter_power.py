@@ -6,12 +6,8 @@ def iterPower(base, exp):
     returns: int or float, base^exp
     '''
     # Your code here
-    i = 1
-    result = base
-    if (exp == 0):
-      return 1
-    else:
-      while i < exp:
-        result =  result * base
-        i += 1
-      return result
+    result = 1
+    while exp > 0:
+      result = result * base
+      exp -= 1
+    return result
