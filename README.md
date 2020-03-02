@@ -10,6 +10,7 @@ LearnPython
 │   ├── exercise4: ABC
 │   ├── exercise5: The Class Explosion Problem^[1]
 │   ├── exercise6: Multiple inheritance
+│   ├── exercise7: Composition
 ```
 
 [1](.)
