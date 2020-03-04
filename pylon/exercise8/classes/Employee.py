@@ -17,6 +17,10 @@ from classes.Contact import (
   AddressBook
 )
 
+from classes.Mixin import (
+  AsDictionaryMixin
+)
+
 class EmployeeDatabase:
   def __init__(self):
     self._employees = [
@@ -61,20 +65,20 @@ class EmployeeDatabase:
     return Employee(id, name, address, payroll_policy, employ_role)
 
 
-class Employee:
+class Employee(AsDictionaryMixin):
   def __init__(self, id, name, address, payroll_policy, employ_role):
     self.id = id
     self.name = name
     self.address = address
-    self.payroll_policy = payroll_policy
-    self.employ_role = employ_role
+    self._payroll_policy = payroll_policy
+    self._employ_role = employ_role
   
   def work(self, hours):
-    duties = self.employ_role.perform_duties(hours)
+    duties = self._employ_role.perform_duties(hours)
     print(f'Employee {self.id} - {self.name}:')
     print(f'- {duties}')
     print('')
-    self.payroll_policy.track_work(hours)
+    self._payroll_policy.track_work(hours)
   
   def calculate_payroll(self):
-    return self.payroll_policy.calculate_payroll()
+    return self._payroll_policy.calculate_payroll()

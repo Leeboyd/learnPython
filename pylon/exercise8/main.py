@@ -1,6 +1,4 @@
-# import classes.Employee as employees
-# import classes.Productivity as productivity
-# import classes.HR as hr
+import json
 
 from classes.Employee import EmployeeDatabase
 from classes.Productivity import ProductivitySystem
@@ -12,3 +10,10 @@ employee_database = EmployeeDatabase()
 employees = employee_database.employees
 productivity_system.track(employees, 40)
 payroll_system.calculate_payroll(employees)
+
+def print_dict(d):
+  print(json.dumps(d, indent=2))
+
+for employee in employees:
+  # print(employee.__dict__)
+  print(employee.to_dict())

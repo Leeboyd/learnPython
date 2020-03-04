@@ -1,3 +1,7 @@
+from classes.Mixin import (
+  AsDictionaryMixin
+)
+
 class AddressBook:
   def __init__(self):
     self._employee_addresses = {
@@ -14,7 +18,7 @@ class AddressBook:
       raise ValueError(employee_id)
     return address
 
-class Address:
+class Address(AsDictionaryMixin):
   def __init__(self, street, city, state, zipcode, street2=''):
     self.street = street
     self.street2 = street2
