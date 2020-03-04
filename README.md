@@ -11,6 +11,7 @@ LearnPython
 │   ├── exercise5: The Class Explosion Problem^[1]
 │   ├── exercise6: Multiple inheritance
 │   ├── exercise7: Composition
+│   ├── exercise8: Mixin
 ```
 
 [1](.)
