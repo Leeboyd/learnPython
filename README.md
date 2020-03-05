@@ -12,6 +12,7 @@ LearnPython
 │   ├── exercise6: Multiple inheritance
 │   ├── exercise7: Composition
 │   ├── exercise8: Mixin
+│   ├── exercise9: Singleton
 ```
 
 [1](.)
