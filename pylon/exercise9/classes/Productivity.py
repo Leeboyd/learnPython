@@ -1,4 +1,4 @@
-class ProductivitySystem:
+class _ProductivitySystem:
   def __init__(self):
     self._roles = {
       'manager': ManagerRole,
@@ -35,3 +35,11 @@ class SalesRole:
 class FactoryRole:
   def perform_duties(self, hours):
     return f'manufactures gadgets for {hours} hours.'
+
+_productivity_system = _ProductivitySystem()
+
+def get_role(role_id):
+  return _productivity_system.get_role(role_id)
+
+def track(employees, hours):
+  _productivity_system.track(employees, hours)

@@ -1,77 +1,56 @@
-from classes.HR import (
-  PayrollSystem,
-  SalaryPolicy,
-  CommissionPolicy,
-  HourlyPolicy 
-)
-
-from classes.Productivity import (
-  ProductivitySystem,
-  ManagerRole,
-  SecretaryRole,
-  SalesRole,
-  FactoryRole
-)
-
-from classes.Contact import (
-  AddressBook
-)
+from classes.HR import get_policy
+from classes.Productivity import get_role
+from classes.Contact import get_employee_address
 
 from classes.Mixin import (
   AsDictionaryMixin
 )
 
-class EmployeeDatabase:
+class _EmployeeDatabase:
   def __init__(self):
-    self._employees = [
-      {
-        'id': 1,
+    self._employees = {
+      1:{
         'name': 'Mary Poppins',
         'role': 'manager'
       },
-      {
-        'id': 2,
+      2:{
         'name': 'John Smith',
         'role': 'secretary'
       },
-      {
-        'id': 3,
+      3:{
         'name': 'Kevin Bacon',
         'role': 'sales'
       },
-      {
-        'id': 4,
+      4:{
         'name': 'Jane Doe',
         'role': 'factory'
       },
-      {
-        'id': 5,
+      5:{        
         'name': 'Robin Williams',
         'role': 'secretary'
       },
-    ]
-    self.productivity = ProductivitySystem()
-    self.payroll = PayrollSystem()
-    self.employee_addresses = AddressBook()
+    }
+    # self.employee_addresses = AddressBook()
 
   @property
   def employees(self):
-    return [self._create_employee(**data) for data in self._employees]
+    return [Employee(id_) for id_ in sorted(self._employees)]
 
-  def _create_employee(self, id, name, role):
-    address = self.employee_addresses.get_employee_address(id)
-    payroll_policy = self.payroll.get_policy(id)
-    employ_role = self.productivity.get_role(role)
-    return Employee(id, name, address, payroll_policy, employ_role)
-
+  def get_employee_info(self, employee_id):
+    info = self._employees.get(employee_id)
+    if not info:
+      raise ValueError(employee_id)
+    return info
 
 class Employee(AsDictionaryMixin):
-  def __init__(self, id, name, address, payroll_policy, employ_role):
+  def __init__(self, id):
     self.id = id
-    self.name = name
-    self.address = address
-    self._payroll_policy = payroll_policy
-    self._employ_role = employ_role
+    info = employee_database.get_employee_info(self.id)
+    self.name = info.get('name')
+    self.address = get_employee_address(self.id)
+    self._employ_role = get_role(info.get('role'))
+    self._payroll_policy = get_policy(self.id)
+    
   
   def work(self, hours):
     duties = self._employ_role.perform_duties(hours)
@@ -82,3 +61,5 @@ class Employee(AsDictionaryMixin):
   
   def calculate_payroll(self):
     return self._payroll_policy.calculate_payroll()
+
+employee_database = _EmployeeDatabase()
