@@ -28,3 +28,12 @@ $ cd creeper
 $ source ./bin/activate
 $ pip3 install BeautifulSoup4
 ```
+
+### 練習重點
+
+```
+├── pylon
+│   ├── exercise1: request and BeautifulSoup
+│   ├── exercise2: xpath css-selector
+│   ├── exercise3: POST
+```
