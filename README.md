@@ -22,16 +22,19 @@ LearnPython
 
 ### 環境
 
-```
+```bash
 $ python3.7 -m venv creeper
 $ cd creeper
 $ source ./bin/activate
 $ pip3 install BeautifulSoup4
+
+# Save all the packages in the file with
+$ pip3 freeze > requirements.txt
 ```
 
 ### 練習重點
 
-```
+```bash
 ├── pylon
 │   ├── exercise1: request and BeautifulSoup
 │   ├── exercise2: xpath css-selector
