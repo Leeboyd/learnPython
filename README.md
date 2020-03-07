@@ -37,6 +37,8 @@ $ pip3 freeze > requirements.txt
 ```bash
 ├── pylon
 │   ├── exercise1: request and BeautifulSoup
-│   ├── exercise2: xpath css-selector
-│   ├── exercise3: POST
+│   ├── exercise2: xpath css-selector POST
+│   ├── exercise3: streetvoice content page
+│   ├── exercise4: stock dog iframe
+│   ├── exercise5: Agoda
 ```
