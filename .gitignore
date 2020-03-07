@@ -3,6 +3,8 @@ py3/
 __pycache__/
 test.py
 
+geckodriver.log
+
 ### venv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
