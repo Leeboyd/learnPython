@@ -41,4 +41,5 @@ $ pip3 freeze > requirements.txt
 │   ├── exercise3: streetvoice content page
 │   ├── exercise4: stock dog iframe
 │   ├── exercise5: Agoda
+│   ├── exercise6: 集保戶股權分散表
 ```
