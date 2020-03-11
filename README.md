@@ -35,11 +35,22 @@ $ pip3 freeze > requirements.txt
 ### 練習重點
 
 ```bash
-├── pylon
+├── LargitData
 │   ├── exercise1: request and BeautifulSoup
 │   ├── exercise2: xpath css-selector POST
 │   ├── exercise3: streetvoice content page
 │   ├── exercise4: stock dog iframe
 │   ├── exercise5: Agoda
 │   ├── exercise6: 集保戶股權分散表
+```
+
+```bash
+├── streetVoice
+│   ├── crawler.py: 爬 streetVoice 活動列表
+```
+
+```bash
+├── Online_tutorial
+│   ├── exercise1: scrapy
+│   ├── 
 ```
